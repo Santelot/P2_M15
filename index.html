@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P2-M15</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 1.2em;
+        }
+        .subtitle {
+            font-size: 0.9em;
+            color: #e0e0e0;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+
+            const activity2 = document.getElementById('activity-2');
+            const activity4 = document.getElementById('activity-4');
+
+            // Ajustar visibilidad según duración
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none'; // Ocultar Actividad 2
+                if (activity4) activity4.style.display = 'block'; // Mostrar Actividad 4
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none'; // Ocultar Actividad 2
+                if (activity4) activity4.style.display = 'none'; // Ocultar Actividad 4
+            } else {
+                if (activity2) activity2.style.display = 'block'; // Mostrar Actividad 2
+                if (activity4) activity4.style.display = 'block'; // Mostrar Actividad 4
+            }
+
+            // Actualizar texto del tiempo seleccionado
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1 style="color: white;">Playbook-P2-M15</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title" style="color: #4CAF50;">Tiempo efectivo de clase: 50 minutos</h2>
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity-0-content')">
+        <div class="title"><strong>🔍 Actividad 0: Revisión de Misión ⏰ Tiempo: No especificado</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que todo esté listo antes de iniciar la clase.
+        </div>
+    </div>
+    <div id="activity-0-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    1. Revisar que las Magic Tablets estén cargadas y conectadas. <br>
+                    2. Verificar que las diapositivas estén listas para proyectar. <br>
+                    3. Tener los bloques de LEGO listos (un set por alumno) para la actividad de Brain Gym.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No aplica (actividad interna).
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('activity-1-content')">
+        <div class="title"><strong>🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 3 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Dar la bienvenida a los estudiantes, guiarlos en el ritual de agradecimiento y explicar los objetivos del día.
+        </div>
+    </div>
+    <div id="activity-1-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 2: Saludar a los estudiantes con entusiasmo y presentar el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¿Están listos para comenzar una nueva aventura? Hoy exploraremos los Bloques de Sonido en Scratch. 🎶"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 3: Pedir que los estudiantes elijan una posición para expresar su estado de ánimo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Si están súper emocionados, pónganse de pie y estiren los brazos hacia el cielo. 🙌 Si necesitan más energía, pongan las manos en la cintura como superhéroes. 🦸"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 4: Guiar a los estudiantes en el ritual de agradecimiento.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Unamos nuestras manos para dar gracias. 🙏 'Gracias por estar aquí, Genios. Hoy será un día lleno de aprendizaje y diversión.'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (1 minuto):</strong> Proyectar Diapositiva 5: Explicar los objetivos del día de manera sencilla y motivadora.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy aprenderemos a usar los bloques de sonido en Scratch para agregar efectos a nuestras animaciones. ¡Serán creadores de melodías!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('activity-2-content')">
+        <div class="title"><strong>💡 Actividad 2: Innovación del Día ⏰ Tiempo: 4.5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Explorar el Nintendo Sound Clock Alarmo como un ejemplo innovador de programación con sonidos.
+        </div>
+    </div>
+    <div id="activity-2-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 6: Explicar brevemente el concepto detrás del Nintendo Sound Clock Alarmo y su uso de programación.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios! Hoy les presento algo asombroso: el Nintendo Sound Clock Alarmo, un despertador que usa programación para ¡hacer que nuestras mañanas sean épicas! 🎮✨"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar Diapositiva 7: Reproducir un video breve (1 minuto) mostrando el Nintendo Sound Clock Alarmo en acción.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Vamos a ver cómo este despertador combina sonidos, animaciones y sensores para crear una experiencia interactiva. ¡Presten atención al uso de los sonidos y melodías!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (2 minutos):</strong> Proyectar Diapositiva 8: Guiar una reflexión con preguntas relacionadas con el ejemplo mostrado y su conexión con Scratch.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¿Cómo creen que este despertador podría mejorar usando más programación? ¿Qué sonidos usarían ustedes si lo diseñaran? ¡Piensen en sus juegos favoritos o hasta sonidos divertidos!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('activity-3-content')">
+        <div class="title"><strong>🧠 Actividad 3: Brain Gym ⏰ Tiempo: 20 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Explorar los bloques de sonido en Scratch y experimentar con sus usos creativos.
+        </div>
+    </div>
+    <div id="activity-3-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <!-- Paso 1 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 9: Anunciar que se explicarán los bloques de sonido y que hay un Easter Egg oculto.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios! Hoy vamos a explorar los bloques de sonido de Scratch y descubrir cómo dar vida a nuestras animaciones con efectos increíbles. ¡Y recuerden, hay un Easter Egg oculto!"
+                </td>
+            </tr>
+            <!-- Paso 2 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (1.5 minutos):</strong> Proyectar Diapositiva 10: Mostrar el bloque y explicar cómo funciona.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "El bloque 'Iniciar sonido [sonido1]' reproduce un sonido específico inmediatamente sin detener las demás acciones. Es ideal para agregar efectos sonoros en segundo plano, como aplausos o sonidos ambientales."
+                </td>
+            </tr>
+            <!-- Paso 3 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (1.5 minutos):</strong> Proyectar Diapositiva 11: Mostrar el bloque y sus usos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Este bloque 'Tocar sonido [sonido1] hasta que termine' espera a que el sonido finalice antes de continuar. Es perfecto para sincronizar acciones, como hacer que un personaje baile al ritmo de una melodía."
+                </td>
+            </tr>
+            <!-- Paso 4 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (1 minuto):</strong> Proyectar Diapositiva 12: Mostrar el bloque y ejemplos de su uso.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "El bloque 'Detener todos los sonidos' apaga cualquier sonido que esté en reproducción. Esto es útil para momentos dramáticos o para reiniciar todo antes de un nuevo efecto sonoro."
+                </td>
+            </tr>
+            <!-- Paso 5 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 5 (1.5 minutos):</strong> Proyectar Diapositiva 13: Mostrar el bloque y ejemplos de cambios dinámicos de volumen.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "El bloque 'Cambiar volumen en [valor]' aumenta o disminuye el volumen durante la animación. Es ideal para efectos como que un sonido se acerque o se aleje, ¡como si tuvieran altavoces móviles!"
+                </td>
+            </tr>
+            <!-- Paso 6 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 6 (1 minuto):</strong> Proyectar Diapositiva 14: Mostrar el bloque con ejemplos de cómo configurarlo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "El bloque 'Fijar volumen al [%]' establece un volumen específico. Si quieres que un sonido no sea tan fuerte o que sea muy suave, ¡este bloque es perfecto!"
+                </td>
+            </tr>
+            <!-- Paso 7 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 7 (1.5 minutos):</strong> Proyectar Diapositiva 15: Mostrar ambos bloques y ejemplos de cómo manipular efectos de sonido.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Estos bloques te permiten agregar o establecer efectos de sonido, como eco o cambio de tono. ¡Imaginen que quieren que su personaje suene como un robot!. ¿Sabían que la palabra 'robot' se utilizó por primera vez en 1921, en una obra de teatro llamada R.U.R. (Rossum’s Universal Robots) escrita por Karel Čapek?"
+                </td>
+            </tr>
+            <!-- Paso 8 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 8 (1 minuto):</strong> Proyectar Diapositiva 16: Mostrar el bloque y ejemplos de uso.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "El bloque 'Quitar efectos de sonido' elimina cualquier eco, cambio de tono o efecto aplicado, dejando el sonido como estaba al inicio. ¡Es como un botón de reinicio para tus sonidos!"
+                </td>
+            </tr>
+            <!-- Paso 9 -->
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 9 (2 minutos):</strong> Proyectar Diapositiva 17: Mostrar cómo grabar sonidos desde Scratch y almacenarlos en la biblioteca.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡En Scratch también puedes grabar tus propios sonidos! Solo debes ir a la pestaña de sonidos, elegir 'Grabar sonido' y puedes usar tu voz o cualquier ruido divertido para personalizar tu proyecto."
+                </td>
+            </tr>
+            <!-- Paso 10 -->
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 10 (2 minutos):</strong> Proyectar Diapositiva 18: Hacer preguntas para fomentar ideas creativas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¿Qué tipo de sonidos crearían para sus proyectos? ¿Grabarían su propia voz o sonidos divertidos? ¿Qué efectos agregarían para hacer que su animación sea más emocionante?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('activity-4-content')">
+        <div class="title"><strong>🎵 Actividad 4: Brain Vitamin ⏰ Tiempo: 5.5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Trabajar en parejas para crear ritmos únicos usando bloques de sonidos.
+        </div>
+    </div>
+    <div id="activity-4-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 19: Explicar el propósito de la actividad, generando curiosidad.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, hoy vamos a trabajar en parejas para crear ritmos únicos usando bloques como si fueran notas musicales! 🎶 Cada bloque será un sonido. ¡Vamos a movernos y divertirnos!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 20: Indicar cómo interpretar los bloques con sonidos y movimientos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "En parejas, uno de ustedes usará los bloques para crear un patrón de sonidos. Cada color representa algo diferente: 🟥 = BOOM (dilo con la boca), 🟦 = CLAP (un aplauso), 🟩 = TAP (un pisotón). ¡Vamos a intentarlo juntos!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (1 minuto):</strong> Sin diapositiva: Hacer una demostración con un ejemplo simple (ej., 🟥🟦🟩).
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Miren, yo acomodo los bloques así: 🟥🟦🟩, y mi compañero sigue el ritmo: ¡BOOM, CLAP, TAP! Ahora es su turno de probar. Recuerden intercambiar roles después de que cada uno cree un patrón."
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (2 minutos):</strong> Proyectar Diapositiva 21: Instruir a los estudiantes a turnarse y colaborar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Tienen 2 minutos para hacer la actividad. Uno de ustedes organiza los bloques y el otro hace los sonidos. Cuando terminen, cambien de roles. ¡A ver qué ritmos tan geniales pueden crear juntos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 5 (1 minuto):</strong> Proyectar Diapositiva 22: Guiar una breve reflexión grupal.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¿Cómo fue seguir el patrón creado por tu compañero? ¿Qué tan fácil fue interpretarlo? ¿Qué aprendiste sobre la importancia del orden y la claridad en las instrucciones? ¡Así es como funciona la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('activity-5-content')">
+        <div class="title"><strong>🤝 Actividad 5: Team Gnius ⏰ Tiempo: 2.5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Formar equipos y establecer roles para colaborar en el desafío.
+        </div>
+    </div>
+    <div id="activity-5-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 23: Explicar la formación de equipos y los roles para el próximo desafío.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, es momento de formar equipos! En el próximo reto, trabajarán en parejas para realizar Paper Programming usando sus Magic Tablets. Uno será el Diseñador y el otro será el Validador. ¡Ambos roles son esenciales!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 24: Mostrar un temporizador de 30 segundos para organizarse.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Tienen 30 segundos para encontrar a su compañero y decidir quién será el Diseñador y quién será el Validador. ¡Elijan sabiamente porque la colaboración será clave en este reto!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 25: Mostrar cómo usarán las Magic Tablets para crear y evaluar los algoritmos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "En este reto, el Diseñador usará su Magic Tablet para crear un algoritmo claro. El Validador probará el diseño para asegurarse de que funciona. ¡La comunicación y el trabajo en equipo serán fundamentales!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 26: Mostrar un temporizador de 30 segundos para verificar los dispositivos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Asegúrense de que sus Magic Tablets están encendidas y listas para el reto. Tienen 30 segundos para confirmar que todo está funcionando correctamente."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 5 (0.5 minutos):</strong> Sin diapositiva: Motivar y reforzar la importancia del trabajo conjunto y la claridad en los roles.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, ahora que están organizados, recuerden que la clave está en la comunicación! Diseñadores, sean claros en su programación. Validadores, asegúrense de que el diseño sea funcional. ¡El éxito está en el trabajo en equipo!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('activity-6-content')">
+        <div class="title"><strong>🏆 Actividad 6: Challenge ⏰ Tiempo: 17 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Diseñar animaciones creativas con movimientos y sonidos en Scratch.
+        </div>
+    </div>
+    <div id="activity-6-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar Diapositiva 27: Explicar los niveles y fomentar la creatividad de los estudiantes.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, llegó el momento del Challenge! Hoy trabajaremos en nuestras Magic Tablets para diseñar animaciones creativas donde los personajes se muevan y usen sonidos. Tienen tres niveles para elegir, dependiendo de qué tan lejos quieran llevar su creatividad y habilidades. ¡Dejen volar su imaginación!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 28: Mostrar ejemplos visuales de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Aquí están los niveles: <br><br>
+                    <strong>Rockie:</strong> Explorador Saltarín, donde un personaje avanza y salta mientras emite sonidos divertidos como un 'BOING' en cada paso. <br><br>
+                    <strong>Master:</strong> Baile Creativo, donde el personaje se mueve en zigzag, sincronizando sus movimientos con sonidos que representen un baile. <br><br>
+                    <strong>Hacker:</strong> Orquesta de Movimientos, donde tres personajes se mueven y reproducen sonidos en armonía, como una pequeña orquesta animada. <br><br>
+                    ¡Elijan el nivel que más los motive a crear!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (1.5 minutos):</strong> Proyectar Diapositiva 29: Explicar cómo organizar las instrucciones según el nivel elegido.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Antes de empezar a escribir, imaginen cómo quieren que su animación cobre vida. Si eligieron Explorador Saltarín, piensen en movimientos simples y sonidos que hagan la animación divertida. Si eligieron Baile Creativo, ¿cómo podrían hacer que el personaje se mueva como si estuviera bailando? Y si eligieron Orquesta de Movimientos, ¿cómo harían que los tres personajes se coordinen y suenen como una melodía? ¡Recuerden ser claros y creativos!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (10 minutos):</strong> Proyectar Diapositiva 30: Mostrar un temporizador de 10 minutos para el diseño.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Tienen 10 minutos para trabajar en su reto. Diseñadores, recuerden ser específicos con las acciones y los sonidos. Validadores, asegúrense de que las instrucciones sean claras y fáciles de entender. ¡Este es su momento de brillar con creatividad!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar Diapositiva 31: Guiar a los estudiantes a revisar y mejorar sus diseños.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora que tienen sus diseños, es hora de probarlos usando el método del Patito de Goma. Diseñadores, expliquen su animación paso a paso, y Validadores, asegúrense de que sea clara y lógica. ¡Este es el momento de perfeccionar sus ideas!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 6 (1 minuto):</strong> Proyectar Diapositiva 32: Motivar a los estudiantes a experimentar ambos roles.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Es hora de intercambiar roles! Ahora el Diseñador será el Validador y viceversa. Esto les permitirá experimentar ambos lados del proceso y aprender más sobre cómo mejorar la claridad y creatividad en sus secuencias."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 7 (0.5 minutos):</strong> Proyectar Diapositiva 33: Resumir los objetivos alcanzados.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy aprendimos a usar Paper Programming para planificar animaciones creativas con movimiento y sonidos. ¡Esto es solo el comienzo! En la próxima clase, llevaremos estos diseños a la programación en Scratch."
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('activity-7-content')">
+        <div class="title"><strong>🎉 Actividad 7: Easter Egg ⏰ Tiempo: 3 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Resolver un reto sorpresa relacionado con curiosidades históricas.
+        </div>
+    </div>
+    <div id="activity-7-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 34: "¡Momento del Easter Egg!".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, el momento que todos estábamos esperando ha llegado! ¿Recuerdan que les mencioné un Easter Egg oculto? Bueno, ¡aquí está! Vamos a ver quiénes prestaron atención y están listos para resolver este reto sorpresa."
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 35: "¿Cuándo se usó por primera vez la palabra 'robot'?".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Aquí va la pregunta del Easter Egg: ¿En qué año se utilizó por primera vez la palabra 'robot'? ¡Les daré una pista: tiene más de 100 años! ¡Tómense unos segundos para pensarlo!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (1 minuto):</strong> Sin diapositiva: Invitar a algunos estudiantes a dar sus respuestas en voz baja.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Voy a elegir a algunos de ustedes para que me den su respuesta en voz baja. ¿Listos? A ver quién puede acercarse más a este dato histórico tan interesante."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (1 minuto):</strong> Proyectar Diapositiva 36: "Respuesta del Easter Egg".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡La respuesta correcta es… 1921! La palabra 'robot' apareció por primera vez en una obra de teatro llamada R.U.R. (Rossum’s Universal Robots) escrita por Karel Čapek. 'Robot' viene del checo 'robota', que significa trabajo forzado. ¡Felicidades a quienes acertaron o estuvieron cerca! ¡Han ganado Mon-e extra por su curiosidad y dedicación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('activity-8-content')">
+        <div class="title"><strong>🙏 Actividad 8: Honor de Dojo ⏰ Tiempo: 1 minuto</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Cerrar la sesión agradeciendo y dejando el espacio en orden.
+        </div>
+    </div>
+    <div id="activity-8-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo del Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Sin diapositiva: Agradecer y felicitar a los estudiantes por su dedicación durante la clase.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy demostraron ser unos verdaderos genios colaborando en equipo y siendo creativos. ¡Es un honor trabajar con un grupo tan increíble como ustedes! ¡Gracias por su esfuerzo y participación activa!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 37: Motivar a los estudiantes a dejar el espacio limpio y organizado como parte del cierre.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Y como siempre, antes de irnos, recordemos honrar nuestro Dojo recogiendo todos los materiales y dejando el espacio tal como lo encontramos. ¡Gracias por cuidar el lugar donde aprendemos y creamos juntos!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Espacio para agregar scripts personalizados si es necesario
+    </script>
+</body>
+</html>
+
